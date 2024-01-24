@@ -19,6 +19,7 @@ class MenuActivity : ComponentActivity() {
     fun startMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        //pee
     }
 }
 
