@@ -1,5 +1,6 @@
 package com.example.llc1
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
@@ -11,8 +12,13 @@ class MenuActivity : ComponentActivity() {
 
         val b = findViewById<Button>(R.id.button)
         b.setOnClickListener{
-            finish()
+            startMainActivity()
         }
+    }
+
+    fun startMainActivity(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
 
