@@ -15,6 +15,7 @@ import com.example.llc1.ui.theme.LLC1Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*
         setContent {
             LLC1Theme {
                 // A surface container using the 'background' color from the theme
@@ -22,10 +23,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Dylan")
+                    Greeting("Dylan1")
                 }
             }
-        }
+        }*/
     }
 }
 
