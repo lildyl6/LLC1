@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="150sp"
         android:layout_height="150sp"
-        android:text="2nd"
+        android:text="App Name"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,13 +19,54 @@
 
     <EditText
         android:id="@+id/edit1"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="200sp"
         android:hint="Enter Val1"/>
+
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit1"
+        android:hint="Enter Val2"/>
+
+    <EditText
+        android:id="@+id/edit3"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit2"
+        android:hint="Enter Val3"/>
+
+    <EditText
+        android:id="@+id/edit4"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit3"
+        android:hint="Enter Val4"/>
+
+    <EditText
+        android:id="@+id/edit5"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit4"
+        android:hint="Enter Val5"/>
 
     <Button
         android:id="@+id/confirmButton"
@@ -35,7 +76,7 @@
         android:text="Confirm"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit1"
-        android:layout_marginTop="300sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/edit5"
+        android:layout_marginTop="50sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

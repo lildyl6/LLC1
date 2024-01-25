@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/val1TextView"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200sp"
+        android:textAlignment="center"
+        android:text="Val1"/>
+
+    <TextView
+        android:id="@+id/val2TextView"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val1TextView"
+        android:textAlignment="center"
+        android:hint="Val2"/>
+
+    <TextView
+        android:id="@+id/val3TextView"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val2TextView"
+        android:textAlignment="center"
+        android:hint="Val3"/>
+
+    <TextView
+        android:id="@+id/val4TextView"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val3TextView"
+        android:textAlignment="center"
+        android:hint="Val4"/>
+
+    <TextView
+        android:id="@+id/val5TextView"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/val4TextView"
+        android:textAlignment="center"
+        android:hint="Val5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
