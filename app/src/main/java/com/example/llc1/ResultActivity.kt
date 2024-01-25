@@ -1,5 +1,6 @@
 package com.example.llc1
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -43,7 +44,14 @@ class ResultActivity : ComponentActivity(){
         intent.putExtra("val3", val3)
         intent.putExtra("val4", val4)
         intent.putExtra("val5", val5)
-        startActivity(intent)
+
+        val animBundle = ActivityOptions.makeCustomAnimation(
+            this,
+            R.anim.fade_in,
+            R.anim.fade_out
+        ).toBundle()
+
+        startActivity(intent, animBundle)
     }
 
     //testing

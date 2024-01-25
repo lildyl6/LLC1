@@ -1,5 +1,6 @@
 package com.example.llc1
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -19,7 +20,12 @@ class MenuActivity : ComponentActivity() {
 
     private fun startMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        val animBundle = ActivityOptions.makeCustomAnimation(
+            this,
+            R.anim.fade_in,
+            R.anim.fade_out
+        ).toBundle()
+        startActivity(intent, animBundle)
     }
 }
 

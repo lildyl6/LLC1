@@ -1,5 +1,6 @@
 package com.example.llc1
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -69,7 +70,14 @@ class MainActivity : ComponentActivity(){
         intent.putExtra("val3", model.getVal3())
         intent.putExtra("val4", model.getVal4())
         intent.putExtra("val5", model.getVal5())
-        startActivity(intent)
+
+        val animBundle = ActivityOptions.makeCustomAnimation(
+            this,
+            R.anim.fade_in,
+            R.anim.fade_out
+        ).toBundle()
+
+        startActivity(intent, animBundle)
     }
 
     private fun checkForExistingValues(){
