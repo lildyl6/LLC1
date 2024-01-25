@@ -21,6 +21,8 @@ class MainActivity : ComponentActivity(){
 
         model = Model(0, 0, 0, 0, 0)
 
+        checkForExistingValues()
+
         val confirmButton = findViewById<Button>(R.id.confirmButton)
         confirmButton.setOnClickListener{
             updateVals()
@@ -35,10 +37,10 @@ class MainActivity : ComponentActivity(){
         val edit5 = findViewById<EditText>(R.id.edit5)
 
         val val1 : String = edit1.text.toString()
-        val val2 : String = edit1.text.toString()
-        val val3 : String = edit1.text.toString()
-        val val4 : String = edit1.text.toString()
-        val val5 : String = edit1.text.toString()
+        val val2 : String = edit2.text.toString()
+        val val3 : String = edit3.text.toString()
+        val val4 : String = edit4.text.toString()
+        val val5 : String = edit5.text.toString()
 
         if(val1 != "" && val2 != "" && val2 != ""
             && val4 != "" && val5 != ""){
@@ -62,6 +64,38 @@ class MainActivity : ComponentActivity(){
 
     private fun startResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("val1", model.getVal1())
+        intent.putExtra("val2", model.getVal2())
+        intent.putExtra("val3", model.getVal3())
+        intent.putExtra("val4", model.getVal4())
+        intent.putExtra("val5", model.getVal5())
         startActivity(intent)
+    }
+
+    private fun checkForExistingValues(){
+        val val1 = intent.getIntExtra("val1", -1)
+        val val2 = intent.getIntExtra("val2", -1)
+        val val3 = intent.getIntExtra("val3", -1)
+        val val4 = intent.getIntExtra("val4", -1)
+        val val5 = intent.getIntExtra("val5", -1)
+
+        //cheaty way to check all arent -1
+        if(val1 + val2 + val3 + val4 + val5 != -5){
+            model.setVal1(val1)
+            model.setVal2(val2)
+            model.setVal3(val3)
+            model.setVal4(val4)
+            model.setVal5(val5)
+
+            setViews()
+        }
+    }
+
+    private fun setViews(){
+        findViewById<EditText>(R.id.edit1).setText(model.getVal1().toString())
+        findViewById<EditText>(R.id.edit2).setText(model.getVal2().toString())
+        findViewById<EditText>(R.id.edit3).setText(model.getVal3().toString())
+        findViewById<EditText>(R.id.edit4).setText(model.getVal4().toString())
+        findViewById<EditText>(R.id.edit5).setText(model.getVal5().toString())
     }
 }
