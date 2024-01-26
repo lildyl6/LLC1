@@ -11,22 +11,22 @@ class Model {
     ========
      */
 
-    private var val1 : Int = 0
+    private var initialBal : Int = 0
     private var val2 : Int = 0
     private var val3 : Int = 0
     private var val4 : Int = 0
     private var val5 : Int = 0
 
-    constructor(val1 : Int, val2 : Int, val3 : Int, val4 : Int, val5 : Int){
-        this.val1 = val1
+    constructor(initialBal : Int, val2 : Int, val3 : Int, val4 : Int, val5 : Int){
+        this.initialBal = initialBal
         this.val2 = val2
         this.val3 = val3
         this.val2 = val4
         this.val3 = val5
     }
 
-    fun getVal1() : Int{
-        return val1
+    fun getInitialBal() : Int{
+        return initialBal
     }
 
     fun getVal2() : Int{
@@ -45,8 +45,8 @@ class Model {
         return val5
     }
 
-    fun setVal1(x : Int){
-        val1 = x
+    fun setInitialBal(x : Int){
+        initialBal = x
     }
 
     fun setVal2(x : Int){

@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity(){
 
         if(val1 != "" && val2 != "" && val3 != ""
             && val4 != "" && val5 != ""){
-            model.setVal1(val1.toInt())
+            model.setInitialBal(val1.toInt())
             model.setVal2(val2.toInt())
             model.setVal3(val3.toInt())
             model.setVal4(val4.toInt())
@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity(){
 
     private fun startResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra("val1", model.getVal1())
+        intent.putExtra("val1", model.getInitialBal())
         intent.putExtra("val2", model.getVal2())
         intent.putExtra("val3", model.getVal3())
         intent.putExtra("val4", model.getVal4())
@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity(){
 
         //cheaty way to check all arent -1
         if(val1 + val2 + val3 + val4 + val5 != -5){
-            model.setVal1(val1)
+            model.setInitialBal(val1)
             model.setVal2(val2)
             model.setVal3(val3)
             model.setVal4(val4)
@@ -97,10 +97,15 @@ class MainActivity : ComponentActivity(){
     }
 
     private fun setViews(){
-        findViewById<EditText>(R.id.edit1).setText(model.getVal1().toString())
-        findViewById<EditText>(R.id.edit2).setText(model.getVal2().toString())
-        findViewById<EditText>(R.id.edit3).setText(model.getVal3().toString())
-        findViewById<EditText>(R.id.edit4).setText(model.getVal4().toString())
-        findViewById<EditText>(R.id.edit5).setText(model.getVal5().toString())
+        var x = findViewById<EditText>(R.id.edit1)
+        x.setText(model.getInitialBal().toString())
+        x = findViewById(R.id.edit2)
+        x.setText(model.getVal2().toString())
+        x = findViewById(R.id.edit3)
+        x.setText(model.getVal3().toString())
+        x = findViewById(R.id.edit4)
+        x.setText(model.getVal4().toString())
+        x = findViewById(R.id.edit5)
+        x.setText(model.getVal5().toString())
     }
 }
