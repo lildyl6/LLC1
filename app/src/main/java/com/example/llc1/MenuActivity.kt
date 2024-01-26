@@ -26,5 +26,6 @@ class MenuActivity : ComponentActivity() {
         ).toBundle()
         startActivity(intent, animBundle)
     }
+
 }
 

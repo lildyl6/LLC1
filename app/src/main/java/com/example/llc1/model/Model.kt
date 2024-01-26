@@ -2,6 +2,15 @@ package com.example.llc1.model
 
 class Model {
 
+    /* =======
+
+    S&P avg: 7.86395833333333
+
+
+
+    ========
+     */
+
     private var val1 : Int = 0
     private var val2 : Int = 0
     private var val3 : Int = 0
