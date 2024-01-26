@@ -3,11 +3,8 @@ package com.example.llc1
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.llc1.model.Model
@@ -43,7 +40,7 @@ class MainActivity : ComponentActivity(){
         val val4 : String = edit4.text.toString()
         val val5 : String = edit5.text.toString()
 
-        if(val1 != "" && val2 != "" && val2 != ""
+        if(val1 != "" && val2 != "" && val3 != ""
             && val4 != "" && val5 != ""){
             model.setVal1(val1.toInt())
             model.setVal2(val2.toInt())

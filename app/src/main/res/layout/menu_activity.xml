@@ -9,10 +9,12 @@
 
     <TextView
         android:id="@+id/titleView"
-        android:layout_width="150sp"
+        android:layout_width="300sp"
         android:layout_height="150sp"
-        android:text="App Name"
+        android:text="Retirement Calculator"
         android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

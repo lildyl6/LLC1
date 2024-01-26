@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.example.llc1.model.Model
 
 class ResultActivity : ComponentActivity(){
 
-    private var val1 = 0;
-    private var val2 = 0;
-    private var val3 = 0;
-    private var val4 = 0;
-    private var val5 = 0;
+    private var val1 = 0
+    private var val2 = 0
+    private var val3 = 0
+    private var val4 = 0
+    private var val5 = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
