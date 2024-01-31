@@ -9,9 +9,9 @@ import androidx.activity.ComponentActivity
 
 class ResultActivity : ComponentActivity(){
 
-    private var val1 = 0
-    private var val2 = 0
-    private var val3 = 0
+    private var initialBal = 0
+    private var currYear = 0
+    private var deathYear = 0
     private var val4 = 0
     private var val5 = 0
 
@@ -20,9 +20,9 @@ class ResultActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_activity)
 
-        val1 = intent.getIntExtra("val1", 0)
-        val2 = intent.getIntExtra("val2", 0)
-        val3 = intent.getIntExtra("val3", 0)
+        initialBal = intent.getIntExtra("initialBal", 0)
+        currYear = intent.getIntExtra("currYear", 0)
+        deathYear = intent.getIntExtra("deathYear", 0)
         val4 = intent.getIntExtra("val4", 0)
         val5 = intent.getIntExtra("val5", 0)
 
@@ -38,9 +38,9 @@ class ResultActivity : ComponentActivity(){
 
     private fun startMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("val1", val1)
-        intent.putExtra("val2", val2)
-        intent.putExtra("val3", val3)
+        intent.putExtra("initialBal", initialBal)
+        intent.putExtra("currYear", currYear)
+        intent.putExtra("deathYear", deathYear)
         intent.putExtra("val4", val4)
         intent.putExtra("val5", val5)
 
@@ -55,15 +55,15 @@ class ResultActivity : ComponentActivity(){
 
     //testing
     private fun setViews(){
-        val v1 = findViewById<TextView>(R.id.val1TextView)
-        val v2 = findViewById<TextView>(R.id.val2TextView)
-        val v3 = findViewById<TextView>(R.id.val3TextView)
+        val initialBalView = findViewById<TextView>(R.id.val1TextView)
+        val currYearView = findViewById<TextView>(R.id.val2TextView)
+        val deathYearView = findViewById<TextView>(R.id.val3TextView)
         val v4 = findViewById<TextView>(R.id.val4TextView)
         val v5 = findViewById<TextView>(R.id.val5TextView)
 
-        v1.text = val1.toString()
-        v2.text = val2.toString()
-        v3.text = val3.toString()
+        initialBalView.text = initialBal.toString()
+        currYearView.text = currYear.toString()
+        deathYearView.text = deathYear.toString()
         v4.text = val4.toString()
         v5.text = val5.toString()
     }

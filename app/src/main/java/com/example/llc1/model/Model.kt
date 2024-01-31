@@ -54,12 +54,14 @@ class Model{
         return yearlyWithdrawAmount
     }
 
-    fun getRetireYea() : Int{
+    fun getRetireYear() : Int{
         return retireYear
     }
 
     fun setInitialBal(x : Float){
         initialBal = x
+        println("bal setted")
+        println(initialBal)
     }
 
     fun setCurrYear(x : Int){
