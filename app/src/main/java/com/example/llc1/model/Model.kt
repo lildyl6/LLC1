@@ -1,6 +1,6 @@
 package com.example.llc1.model
 
-class Model {
+class Model<T> {
 
     /* =======
 
@@ -17,6 +17,7 @@ class Model {
     private var yearlyDepositAmount : Int = 0
     private var yearlyWithdrawAmount : Int = 0
     private var retireYear : Int = 0
+    private var array : Array<Array<Number>>? = null
 
 
     constructor(initialBal : Int, currYear : Int, deathYear : Int,
@@ -28,6 +29,8 @@ class Model {
         this.yearlyDepositAmount = yearlyDepositAmount
         this.yearlyWithdrawAmount = yearlyWithdrawAmount
         this.retireYear = retireYear
+
+        doHist()
     }
 
     fun getInitialBal() : Int{
@@ -78,8 +81,9 @@ class Model {
         retireYear = x
     }
 
-    fun hist() {
-        val array = arrayOf(
+    fun doHist(){
+        // ARRAY [ year , month , spx , roi , cpi , inf ]
+        array = arrayOf(
         arrayOf(1950,1,16.88,2.05562273276904,23.5,-0.423728813559328),
         arrayOf(1950,2,17.21,1.95497630331755,23.5,0),
         arrayOf(1950,3,17.35,0.813480534572926,23.6,0.425531914893623),
