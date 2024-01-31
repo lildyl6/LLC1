@@ -12,56 +12,69 @@ class Model {
      */
 
     private var initialBal : Int = 0
-    private var val2 : Int = 0
-    private var val3 : Int = 0
-    private var val4 : Int = 0
-    private var val5 : Int = 0
+    private var currYear : Int = 0
+    private var deathYear : Int = 0
+    private var yearlyDepositAmount : Int = 0
+    private var yearlyWithdrawAmount : Int = 0
+    private var retireYear : Int = 0
 
-    constructor(initialBal : Int, val2 : Int, val3 : Int, val4 : Int, val5 : Int){
+
+    constructor(initialBal : Int, currYear : Int, deathYear : Int,
+                yearlyDepositAmount : Int, yearlyWithdrawAmount : Int,
+                retireYear : Int){
         this.initialBal = initialBal
-        this.val2 = val2
-        this.val3 = val3
-        this.val2 = val4
-        this.val3 = val5
+        this.currYear = currYear
+        this.deathYear = deathYear
+        this.yearlyDepositAmount = yearlyDepositAmount
+        this.yearlyWithdrawAmount = yearlyWithdrawAmount
+        this.retireYear = retireYear
     }
 
     fun getInitialBal() : Int{
         return initialBal
     }
 
-    fun getVal2() : Int{
-        return val2
+    fun getCurrYear() : Int{
+        return currYear
     }
 
-    fun getVal3() : Int{
-        return val3
+    fun getDeathYear() : Int{
+        return deathYear
     }
 
-    fun getVal4() : Int{
-        return val4
+    fun getYearlyDepositAmount() : Int{
+        return yearlyDepositAmount
     }
 
-    fun getVal5() : Int{
-        return val5
+    fun getYearlyWithdrawAmount() : Int{
+        return yearlyWithdrawAmount
+    }
+
+    fun getRetireYea() : Int{
+        return retireYear
     }
 
     fun setInitialBal(x : Int){
         initialBal = x
     }
 
-    fun setVal2(x : Int){
-        val2 = x
+    fun setCurrYear(x : Int){
+        currYear = x
     }
 
-    fun setVal3(x : Int){
-        val3 = x
+    fun setDeathYear(x : Int){
+        deathYear = x
     }
 
-    fun setVal4(x : Int){
-        val4 = x
+    fun setYearlyDepositAmount(x : Int){
+        yearlyDepositAmount = x
     }
 
-    fun setVal5(x : Int){
-        val5 = x
+    fun setYearlyWithdrawAmount(x : Int){
+        yearlyWithdrawAmount = x
+    }
+
+    fun setRetireYear(x : Int){
+        retireYear = x
     }
 }

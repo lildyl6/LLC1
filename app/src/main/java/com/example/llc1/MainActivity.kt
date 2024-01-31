@@ -17,7 +17,8 @@ class MainActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        model = Model(0, 0, 0, 0, 0)
+        model = Model(0, 0, 0,
+            0, 0, 0)
 
         checkForExistingValues()
 
@@ -43,10 +44,12 @@ class MainActivity : ComponentActivity(){
         if(val1 != "" && val2 != "" && val3 != ""
             && val4 != "" && val5 != ""){
             model.setInitialBal(val1.toInt())
+            /*
             model.setVal2(val2.toInt())
             model.setVal3(val3.toInt())
             model.setVal4(val4.toInt())
             model.setVal5(val5.toInt())
+            */
 
             startResultActivity()
         } else{
@@ -63,10 +66,12 @@ class MainActivity : ComponentActivity(){
     private fun startResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("val1", model.getInitialBal())
+        /*
         intent.putExtra("val2", model.getVal2())
         intent.putExtra("val3", model.getVal3())
         intent.putExtra("val4", model.getVal4())
         intent.putExtra("val5", model.getVal5())
+        */
 
         val animBundle = ActivityOptions.makeCustomAnimation(
             this,
@@ -87,10 +92,12 @@ class MainActivity : ComponentActivity(){
         //cheaty way to check all arent -1
         if(val1 + val2 + val3 + val4 + val5 != -5){
             model.setInitialBal(val1)
+            /*
             model.setVal2(val2)
             model.setVal3(val3)
             model.setVal4(val4)
             model.setVal5(val5)
+            */
 
             setViews()
         }
@@ -100,6 +107,7 @@ class MainActivity : ComponentActivity(){
         var x = findViewById<EditText>(R.id.edit1)
         x.setText(model.getInitialBal().toString())
         x = findViewById(R.id.edit2)
+        /*
         x.setText(model.getVal2().toString())
         x = findViewById(R.id.edit3)
         x.setText(model.getVal3().toString())
@@ -107,5 +115,6 @@ class MainActivity : ComponentActivity(){
         x.setText(model.getVal4().toString())
         x = findViewById(R.id.edit5)
         x.setText(model.getVal5().toString())
+        */
     }
 }
