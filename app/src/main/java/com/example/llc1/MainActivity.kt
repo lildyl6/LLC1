@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity(){
         val confirmButton = findViewById<Button>(R.id.confirmButton)
         confirmButton.setOnClickListener{
             updateVals()
+            model.doCalc(1950, 1)
             startResultActivity()
         }
     }

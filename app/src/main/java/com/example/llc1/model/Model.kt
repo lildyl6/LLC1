@@ -31,7 +31,6 @@ class Model{
         this.retireYear = retireYear
 
         doHist()
-        doCalc(1950, 1)
     }
 
     fun getInitialBal() : Float{
@@ -60,8 +59,6 @@ class Model{
 
     fun setInitialBal(x : Float){
         initialBal = x
-        println("bal setted")
-        println(initialBal)
     }
 
     fun setCurrYear(x : Int){
@@ -84,7 +81,7 @@ class Model{
         retireYear = x
     }
 
-    private fun doCalc(year : Int, month : Int) : Float{
+    fun doCalc(year : Int, month : Int) : Float{
         /*
         steps:
         //start year is 1950
@@ -99,9 +96,10 @@ class Model{
 
         for(i in start..end){
             val element : Float? = array?.get(i)?.get(3)?.toFloat()
-            sum *= (element!!/100) + 1
+            sum *= ((element!!/100) + 1)
         }
 
+        println("sum:")
         println(sum)
         return sum
     }
