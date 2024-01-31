@@ -11,7 +11,7 @@ class Model{
     ========
      */
 
-    private var initialBal : Int = 0
+    private var initialBal : Float = 0f
     private var currYear : Int = 0
     private var deathYear : Int = 0
     private var yearlyDepositAmount : Int = 0
@@ -20,7 +20,7 @@ class Model{
     private var array : Array<Array<Number>>? = null
 
 
-    constructor(initialBal : Int, currYear : Int, deathYear : Int,
+    constructor(initialBal : Float, currYear : Int, deathYear : Int,
                 yearlyDepositAmount : Int, yearlyWithdrawAmount : Int,
                 retireYear : Int){
         this.initialBal = initialBal
@@ -31,9 +31,10 @@ class Model{
         this.retireYear = retireYear
 
         doHist()
+        doCalc(1950, 1)
     }
 
-    fun getInitialBal() : Int{
+    fun getInitialBal() : Float{
         return initialBal
     }
 
@@ -57,7 +58,7 @@ class Model{
         return retireYear
     }
 
-    fun setInitialBal(x : Int){
+    fun setInitialBal(x : Float){
         initialBal = x
     }
 
@@ -81,7 +82,29 @@ class Model{
         retireYear = x
     }
 
-    fun doHist(){
+    private fun doCalc(year : Int, month : Int) : Float{
+        /*
+        steps:
+        //start year is 1950
+        from curr year to death year
+        times bal by roi for each year
+
+         */
+        val length = (deathYear - currYear) * 12
+        var sum : Float = initialBal
+        val start = (year - 1950)*12 + month - 1
+        val end = start + length
+
+        for(i in start..end){
+            val element : Float? = array?.get(i)?.get(3)?.toFloat()
+            sum *= (element!!/100) + 1
+        }
+
+        println(sum)
+        return sum
+    }
+
+    private fun doHist(){
         // ARRAY [ year , month , spx , roi , cpi , inf ]
         array = arrayOf(
         arrayOf(1950,1,16.88,2.05562273276904,23.5,-0.423728813559328),

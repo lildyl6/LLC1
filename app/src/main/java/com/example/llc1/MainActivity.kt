@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        model = Model(0, 0, 0,
+        model = Model(0f, 0, 0,
             0, 0, 0)
 
         checkForExistingValues()
@@ -43,10 +43,10 @@ class MainActivity : ComponentActivity(){
 
         if(val1 != "" && val2 != "" && val3 != ""
             && val4 != "" && val5 != ""){
-            model.setInitialBal(val1.toInt())
+            model.setInitialBal(val1.toFloat())
+            model.setCurrYear(val2.toInt())
+            model.setDeathYear(val3.toInt())
             /*
-            model.setVal2(val2.toInt())
-            model.setVal3(val3.toInt())
             model.setVal4(val4.toInt())
             model.setVal5(val5.toInt())
             */
@@ -66,9 +66,10 @@ class MainActivity : ComponentActivity(){
     private fun startResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("val1", model.getInitialBal())
+
+        intent.putExtra("val2", model.getCurrYear())
+        intent.putExtra("val3", model.getDeathYear())
         /*
-        intent.putExtra("val2", model.getVal2())
-        intent.putExtra("val3", model.getVal3())
         intent.putExtra("val4", model.getVal4())
         intent.putExtra("val5", model.getVal5())
         */
@@ -91,10 +92,10 @@ class MainActivity : ComponentActivity(){
 
         //cheaty way to check all arent -1
         if(val1 + val2 + val3 + val4 + val5 != -5){
-            model.setInitialBal(val1)
+            model.setInitialBal(val1.toFloat())
+            model.setCurrYear(val2)
+            model.setDeathYear(val3)
             /*
-            model.setVal2(val2)
-            model.setVal3(val3)
             model.setVal4(val4)
             model.setVal5(val5)
             */
