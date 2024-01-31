@@ -106,8 +106,8 @@ class MainActivity : ComponentActivity(){
     private fun setViews(){
         var x = findViewById<EditText>(R.id.edit1)
         x.setText(model.getInitialBal().toString())
-        x = findViewById(R.id.edit2)
         /*
+        x = findViewById(R.id.edit2)
         x.setText(model.getVal2().toString())
         x = findViewById(R.id.edit3)
         x.setText(model.getVal3().toString())
