@@ -9,7 +9,7 @@ import androidx.activity.ComponentActivity
 
 class ResultActivity : ComponentActivity(){
 
-    private var initialBal = 0
+    private var initialBal = 0f
     private var currYear = 0
     private var deathYear = 0
     private var val4 = 0
@@ -20,7 +20,7 @@ class ResultActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_activity)
 
-        initialBal = intent.getIntExtra("initialBal", 0)
+        initialBal = intent.getFloatExtra("initialBal", 0f)
         currYear = intent.getIntExtra("currYear", 0)
         deathYear = intent.getIntExtra("deathYear", 0)
         val4 = intent.getIntExtra("val4", 0)

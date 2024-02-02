@@ -24,16 +24,17 @@ class MainActivity : ComponentActivity(){
 
         val confirmButton = findViewById<Button>(R.id.confirmButton)
         confirmButton.setOnClickListener{
-            updateVals()
-            model.doCalc(1950, 1)
-            startResultActivity()
+            if(updateVals()){
+                model.doCalc(1950, 1)
+                startResultActivity()
+            }
         }
     }
 
-    private fun updateVals(){
-        val initialBalEdit = findViewById<EditText>(R.id.edit1)
-        val currYearEdit = findViewById<EditText>(R.id.edit2)
-        val deathYearEdit = findViewById<EditText>(R.id.edit3)
+    private fun updateVals() : Boolean{
+        val initialBalEdit = findViewById<EditText>(R.id.initialBalEdit)
+        val currYearEdit = findViewById<EditText>(R.id.currYearEdit)
+        val deathYearEdit = findViewById<EditText>(R.id.deathYearEdit)
         val edit4 = findViewById<EditText>(R.id.edit4)
         val edit5 = findViewById<EditText>(R.id.edit5)
 
@@ -53,8 +54,10 @@ class MainActivity : ComponentActivity(){
             model.setVal5(val5.toInt())
             */
 
+            return true
         } else{
             showWarnToast()
+            return false
         }
 
     }
@@ -67,7 +70,6 @@ class MainActivity : ComponentActivity(){
     private fun startResultActivity(){
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("initialBal", model.getInitialBal())
-
         intent.putExtra("currYear", model.getCurrYear())
         intent.putExtra("deathYear", model.getDeathYear())
         /*
@@ -85,32 +87,45 @@ class MainActivity : ComponentActivity(){
     }
 
     private fun checkForExistingValues(){
-        val val1 = intent.getIntExtra("initialBal", -1)
-        val val2 = intent.getIntExtra("currYear", -1)
-        val val3 = intent.getIntExtra("deathYear", -1)
+        val initialBal = intent.getFloatExtra("initialBal", -1f)
+        val currYear = intent.getIntExtra("currYear", -1)
+        val deathYear = intent.getIntExtra("deathYear", -1)
         val val4 = intent.getIntExtra("val4", -1)
         val val5 = intent.getIntExtra("val5", -1)
+        var changed = false
 
-        //cheaty way to check all arent -1
-        if(val1 + val2 + val3 + val4 + val5 != -5){
-            model.setInitialBal(val1.toFloat())
-            model.setCurrYear(val2)
-            model.setDeathYear(val3)
-            /*
+        if(initialBal != -1f) {
+            model.setInitialBal(initialBal)
+            changed = true
+        }
+        if(currYear != -1) {
+            model.setCurrYear(currYear)
+            changed = true
+        }
+        if(deathYear != -1) {
+            model.setDeathYear(deathYear)
+            changed = true
+        }
+        /*
+        if(val4 != -1) {
             model.setVal4(val4)
+        }
+        if(val5 != -1) {
             model.setVal5(val5)
-            */
+        }
+        */
 
+        if(changed) {
             setViews()
         }
     }
 
     private fun setViews(){
-        var x = findViewById<EditText>(R.id.edit1)
+        var x = findViewById<EditText>(R.id.initialBalEdit)
         x.setText(model.getInitialBal().toString())
-        x = findViewById(R.id.edit2)
+        x = findViewById(R.id.currYearEdit)
         x.setText(model.getCurrYear().toString())
-        x = findViewById(R.id.edit3)
+        x = findViewById(R.id.deathYearEdit)
         x.setText(model.getDeathYear().toString())
         /*
         x = findViewById(R.id.edit4)
