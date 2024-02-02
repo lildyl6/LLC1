@@ -14,9 +14,10 @@ class Model{
     private var initialBal : Float = 0f
     private var currYear : Int = 0
     private var deathYear : Int = 0
+    private var retireYear : Int = 0
     private var yearlyDepositAmount : Int = 0
     private var yearlyWithdrawAmount : Int = 0
-    private var retireYear : Int = 0
+
     private var array : Array<Array<Number>>? = null
 
 
@@ -26,9 +27,9 @@ class Model{
         this.initialBal = initialBal
         this.currYear = currYear
         this.deathYear = deathYear
+        this.retireYear = retireYear
         this.yearlyDepositAmount = yearlyDepositAmount
         this.yearlyWithdrawAmount = yearlyWithdrawAmount
-        this.retireYear = retireYear
 
         val econHist = EconHist()
         array = econHist.getEconHist()
@@ -46,16 +47,16 @@ class Model{
         return deathYear
     }
 
+    fun getRetireYear() : Int{
+        return retireYear
+    }
+
     fun getYearlyDepositAmount() : Int{
         return yearlyDepositAmount
     }
 
     fun getYearlyWithdrawAmount() : Int{
         return yearlyWithdrawAmount
-    }
-
-    fun getRetireYear() : Int{
-        return retireYear
     }
 
     fun setInitialBal(x : Float){
@@ -70,16 +71,16 @@ class Model{
         deathYear = x
     }
 
+    fun setRetireYear(x : Int){
+        retireYear = x
+    }
+
     fun setYearlyDepositAmount(x : Int){
         yearlyDepositAmount = x
     }
 
     fun setYearlyWithdrawAmount(x : Int){
         yearlyWithdrawAmount = x
-    }
-
-    fun setRetireYear(x : Int){
-        retireYear = x
     }
 
     fun doCalc(year : Int, month : Int) : Float{
