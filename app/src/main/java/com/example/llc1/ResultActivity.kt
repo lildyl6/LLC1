@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.example.llc1.model.Model
 
 class ResultActivity : ComponentActivity(){
 
@@ -20,11 +21,6 @@ class ResultActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.result_activity)
 
-        initialBal = intent.getFloatExtra("initialBal", 0f)
-        currYear = intent.getIntExtra("currYear", 0)
-        deathYear = intent.getIntExtra("deathYear", 0)
-        val4 = intent.getIntExtra("val4", 0)
-        val5 = intent.getIntExtra("val5", 0)
 
         val goBackButton = findViewById<Button>(R.id.goBackButton)
         goBackButton.setOnClickListener{
@@ -38,11 +34,6 @@ class ResultActivity : ComponentActivity(){
 
     private fun startMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("initialBal", initialBal)
-        intent.putExtra("currYear", currYear)
-        intent.putExtra("deathYear", deathYear)
-        intent.putExtra("val4", val4)
-        intent.putExtra("val5", val5)
 
         val animBundle = ActivityOptions.makeCustomAnimation(
             this,
@@ -61,10 +52,10 @@ class ResultActivity : ComponentActivity(){
         val v4 = findViewById<TextView>(R.id.val4TextView)
         val v5 = findViewById<TextView>(R.id.val5TextView)
 
-        initialBalView.text = initialBal.toString()
-        currYearView.text = currYear.toString()
-        deathYearView.text = deathYear.toString()
-        v4.text = val4.toString()
-        v5.text = val5.toString()
+        initialBalView.text = Model.initialBal.toString()
+        currYearView.text = Model.currYear.toString()
+        deathYearView.text = Model.deathYear.toString()
+        //v4.text = Model.val4.toString()
+        //v5.text = Model.val5.toString()
     }
 }
