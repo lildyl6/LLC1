@@ -32,7 +32,7 @@ object Model{
          */
         val length = (deathYear - currYear) * 12
         var sum : Float = initialBal
-        println("init sum is: "+ sum)
+        println("init sum is "+ sum)
         val start = (year - 1950)*12 + month - 1
         val end = start + length
 
