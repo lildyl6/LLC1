@@ -1,6 +1,6 @@
 package com.example.llc1.model
 
-class Model{
+object Model{
 
     /* =======
 
@@ -11,77 +11,16 @@ class Model{
     ========
      */
 
-    private var initialBal : Float = 0f
-    private var currYear : Int = 0
-    private var deathYear : Int = 0
-    private var retireYear : Int = 0
-    private var yearlyDepositAmount : Int = 0
-    private var yearlyWithdrawAmount : Int = 0
+    var initialBal : Float = 0f
+    var currYear : Int = 0
+    var deathYear : Int = 0
+    var retireYear : Int = 0
+    var yearlyDepositAmount : Int = 0
+    var yearlyWithdrawAmount : Int = 0
 
-    private var array : Array<Array<Number>>? = null
+    var array : Array<Array<Number>> = EconHist.array
 
 
-    constructor(initialBal : Float, currYear : Int, deathYear : Int,
-                yearlyDepositAmount : Int, yearlyWithdrawAmount : Int,
-                retireYear : Int){
-        this.initialBal = initialBal
-        this.currYear = currYear
-        this.deathYear = deathYear
-        this.retireYear = retireYear
-        this.yearlyDepositAmount = yearlyDepositAmount
-        this.yearlyWithdrawAmount = yearlyWithdrawAmount
-
-        val econHist = EconHist()
-        array = econHist.getEconHist()
-    }
-
-    fun getInitialBal() : Float{
-        return initialBal
-    }
-
-    fun getCurrYear() : Int{
-        return currYear
-    }
-
-    fun getDeathYear() : Int{
-        return deathYear
-    }
-
-    fun getRetireYear() : Int{
-        return retireYear
-    }
-
-    fun getYearlyDepositAmount() : Int{
-        return yearlyDepositAmount
-    }
-
-    fun getYearlyWithdrawAmount() : Int{
-        return yearlyWithdrawAmount
-    }
-
-    fun setInitialBal(x : Float){
-        initialBal = x
-    }
-
-    fun setCurrYear(x : Int){
-        currYear = x
-    }
-
-    fun setDeathYear(x : Int){
-        deathYear = x
-    }
-
-    fun setRetireYear(x : Int){
-        retireYear = x
-    }
-
-    fun setYearlyDepositAmount(x : Int){
-        yearlyDepositAmount = x
-    }
-
-    fun setYearlyWithdrawAmount(x : Int){
-        yearlyWithdrawAmount = x
-    }
 
     fun doCalc(year : Int, month : Int) : Float{
         /*

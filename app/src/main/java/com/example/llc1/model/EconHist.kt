@@ -1,18 +1,11 @@
 package com.example.llc1.model
 
-class EconHist {
-    private var array : Array<Array<Number>>? = null
+object EconHist {
 
-    constructor(){
-        doHist()
-    }
-
-    fun getEconHist() : Array<Array<Number>>?{
-        return array
-    }
-    private fun doHist(){
+    val array = getHist()
+    private fun getHist() : Array<Array<Number>>{
         // ARRAY [ year , month , spx , roi , cpi , inf ]
-        array = arrayOf(
+        return arrayOf(
             arrayOf(1950,1,16.88,2.05562273276904,23.5,-0.423728813559328),
             arrayOf(1950,2,17.21,1.95497630331755,23.5,0),
             arrayOf(1950,3,17.35,0.813480534572926,23.6,0.425531914893623),
